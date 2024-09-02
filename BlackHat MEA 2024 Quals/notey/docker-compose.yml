@@ -1,0 +1,16 @@
+services:
+  notey:
+    build: .
+    restart: always
+    privileged: true
+    ports:
+      - "5000:5000"
+    environment:
+      JAIL_ENV_DYN_FLAG: BHFlagY{tesst_flag}
+    healthcheck:
+      test: ["CMD-SHELL", "curl --silent --fail http://127.0.0.1:5000 || exit 1"]
+      interval: 5s
+      timeout: 10s
+      retries: 3
+    cpus: "1"
+    mem_limit: "2048M"
