@@ -1,0 +1,28 @@
+--
+-- Database: `CTF`
+--
+CREATE DATABASE IF NOT EXISTS `CTF` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `CTF`;
+
+-- --------------------------------------------------------
+
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL UNIQUE,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=66 ;
+
+CREATE TABLE IF NOT EXISTS `notes` (
+  `note_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `secret` varchar(255) NOT NULL,
+  `note` varchar(255) NOT NULL,
+  PRIMARY KEY (`note_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=66 ;
